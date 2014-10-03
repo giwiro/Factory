@@ -14,16 +14,6 @@ import main.beans.BarcoRuso;
  *
  * @author Davalos
  */
-public class Factory implements Creador{
-
-    @Override
-    public BarcoChino factoryBarcoChino() {
-        return new BarcoChino();
-    }
-
-    @Override
-    public BarcoRuso factoryBarcoRuso() {
-        return new BarcoRuso();
-    }
-    
+public interface FactoryDAO {
+    public Barco crearBarco();
 }

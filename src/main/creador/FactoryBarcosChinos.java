@@ -6,14 +6,19 @@
 
 package main.creador;
 
+import main.beans.Barco;
 import main.beans.BarcoChino;
-import main.beans.BarcoRuso;
 
 /**
  *
  * @author Davalos
  */
-public interface Creador {
-    public BarcoChino factoryBarcoChino();
-    public BarcoRuso factoryBarcoRuso();
+public class FactoryBarcosChinos implements FactoryDAO{
+
+    @Override
+    public Barco crearBarco() {
+        return new BarcoChino();
+    }
+
+    
 }

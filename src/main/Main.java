@@ -7,8 +7,9 @@
 package main;
 
 import main.beans.Barco;
-import main.creador.Creador;
-import main.creador.Factory;
+import main.creador.FactoryDAO;
+import main.creador.FactoryBarcosChinos;
+import main.creador.FactoryBarcosRusos;
 
 /**
  *
@@ -20,12 +21,16 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Creador c = new Factory();
-        Barco chino = c.factoryBarcoChino();
-        Barco ruso = c.factoryBarcoRuso();
+        FactoryDAO f = new FactoryBarcosChinos();
+        Barco chino = f.crearBarco();
+        
+        f = new FactoryBarcosRusos();
+        Barco ruso = f.crearBarco();
+        
         
         chino.disparar();
         ruso.disparar();
+        
     }
     
 }
